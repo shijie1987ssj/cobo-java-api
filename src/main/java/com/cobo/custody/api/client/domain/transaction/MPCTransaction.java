@@ -3,6 +3,8 @@ package com.cobo.custody.api.client.domain.transaction;
 import com.cobo.custody.api.client.domain.account.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
+
 public class MPCTransaction {
     @JsonProperty(value = "cobo_id")
     private String coboId;
@@ -73,7 +75,7 @@ public class MPCTransaction {
 
     @JsonProperty(value = "approval_process")
     private String approvalProcess;
-    
+
     @JsonProperty(value = "gas_station_child_id")
     private String gasStationChildID;
 
@@ -85,6 +87,12 @@ public class MPCTransaction {
     private Boolean isGasStationTx;
 
     private String remark;
+
+    @JsonProperty(value = "max_fee")
+    private BigDecimal maxFee;
+
+    @JsonProperty(value = "max_priority_fee")
+    private BigDecimal maxPriorityFee;
 
     @Override
     public String toString() {
@@ -119,7 +127,25 @@ public class MPCTransaction {
                 ", memo='" + memo + '\'' +
                 ", isGasStationTx=" + isGasStationTx +
                 ", remark='" + remark + '\'' +
+                ", maxFee=" + maxFee +
+                ", maxPriorityFee='" + maxPriorityFee + '\'' +
                 '}';
+    }
+
+    public BigDecimal getMaxFee() {
+        return maxFee;
+    }
+
+    public void setMaxFee(BigDecimal maxFee) {
+        this.maxFee = maxFee;
+    }
+
+    public BigDecimal getMaxPriorityFee() {
+        return maxPriorityFee;
+    }
+
+    public void setMaxPriorityFee(BigDecimal maxPriorityFee) {
+        this.maxPriorityFee = maxPriorityFee;
     }
 
     public Boolean getGasStationTx() {
