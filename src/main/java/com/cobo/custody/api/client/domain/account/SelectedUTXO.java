@@ -13,6 +13,8 @@ public class SelectedUTXO {
     private String address;
     @JsonProperty(value = "value")
     private BigInteger value;
+    @JsonProperty(value = "redeem_script")
+    private String redeemScript;
 
     public String getTxHash() {
         return txHash;
@@ -46,6 +48,14 @@ public class SelectedUTXO {
         this.value = value;
     }
 
+    public String getRedeemScript() {
+        return redeemScript;
+    }
+
+    public void setRedeemScript(String redeemScript) {
+        this.redeemScript = redeemScript;
+    }
+
     @Override
     public String toString() {
         return "SelectedUTXO{" +
@@ -53,6 +63,7 @@ public class SelectedUTXO {
                 ", voutN=" + voutN +
                 ", address='" + address + '\'' +
                 ", value=" + value +
+                ", redeemScript='" + redeemScript + '\'' +
                 '}';
     }
 }

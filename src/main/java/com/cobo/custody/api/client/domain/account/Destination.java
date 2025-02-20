@@ -11,6 +11,8 @@ public class Destination {
     private BigInteger value;
     @JsonProperty(value = "is_change")
     private Boolean isChange;
+    @JsonProperty(value = "script")
+    private String script;
 
     public String getAddress() {
         return address;
@@ -36,12 +38,21 @@ public class Destination {
         isChange = change;
     }
 
+    public String getScript() {
+        return script;
+    }
+
+    public void setScript(String script) {
+        this.script = script;
+    }
+
     @Override
     public String toString() {
         return "Destination{" +
                 "address='" + address + '\'' +
                 ", value=" + value +
                 ", isChange=" + isChange +
+                ", script='" + script + '\'' +
                 '}';
     }
 }
